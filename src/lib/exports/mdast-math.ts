@@ -16,6 +16,9 @@ export const components: Components = {
 	math: Math
 };
 
-export const extensions = [math()];
+export const extensions: import('micromark-util-types').Extension[] = [math()];
 
-export const mdastExtensions = [mathFromMarkdown()];
+export const mdastExtensions: (
+	| import('mdast-util-from-markdown').Extension
+	| import('mdast-util-from-markdown').Extension[]
+)[] = [mathFromMarkdown()];
