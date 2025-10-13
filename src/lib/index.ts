@@ -1,1 +1,1 @@
-export * as mdastMath from './exports/mdast-math.js';
+export * from './components/index.js';

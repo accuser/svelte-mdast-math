@@ -1,10 +1,11 @@
 <script lang="ts">
 	import katex from 'katex';
-	import type { Math } from 'mdast-util-math';
 
-	let { value }: Math = $props();
+	let { node }: { node: import('mdast-util-math').Math } = $props();
 
-	let mathml = $derived.by(() =>
+	let { value } = $derived(node);
+
+	let mathml = $derived(
 		katex.renderToString(value, {
 			throwOnError: false,
 			displayMode: true

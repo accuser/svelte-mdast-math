@@ -1,6 +1,6 @@
 import { mount, type ComponentProps } from 'svelte';
 import { beforeEach, describe, expect, test } from 'vitest';
-import InlineMath from './InlineMath.svelte';
+import InlineMath from './inline-math.svelte';
 
 describe('InlineMath.svelte', async () => {
 	beforeEach(() => {
@@ -8,9 +8,9 @@ describe('InlineMath.svelte', async () => {
 	});
 
 	const it = test.extend<{ props: ComponentProps<typeof InlineMath> }>({
-		props: {
+		props: {node:{
 			type: 'inlineMath',
-			value: 'C'
+			value: 'C'}
 		}
 	});
 

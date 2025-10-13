@@ -1,6 +1,6 @@
 import { mount, type ComponentProps } from 'svelte';
 import { beforeEach, describe, expect, test } from 'vitest';
-import Math from './Math.svelte';
+import Math from './math.svelte';
 
 describe('Math.svelte', async () => {
 	beforeEach(() => {
@@ -8,9 +8,9 @@ describe('Math.svelte', async () => {
 	});
 
 	const it = test.extend<{ props: ComponentProps<typeof Math> }>({
-		props: {
+		props: {node:{
 			type: 'math',
-			value: 'C'
+			value: 'C'}
 		}
 	});
 
