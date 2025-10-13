@@ -1,14 +1,15 @@
 import { mount } from 'svelte';
 import { beforeEach, describe, expect, test } from 'vitest';
-import InlineMath from './InlineMath.svelte';
+import InlineMath from './inline-math.svelte';
 describe('InlineMath.svelte', async () => {
     beforeEach(() => {
         document.body = document.createElement('body');
     });
     const it = test.extend({
-        props: {
-            type: 'inlineMath',
-            value: 'C'
+        props: { node: {
+                type: 'inlineMath',
+                value: 'C'
+            }
         }
     });
     it('renders <span>', async ({ props }) => {

@@ -1,14 +1,15 @@
 import { mount } from 'svelte';
 import { beforeEach, describe, expect, test } from 'vitest';
-import Math from './Math.svelte';
+import Math from './math.svelte';
 describe('Math.svelte', async () => {
     beforeEach(() => {
         document.body = document.createElement('body');
     });
     const it = test.extend({
-        props: {
-            type: 'math',
-            value: 'C'
+        props: { node: {
+                type: 'math',
+                value: 'C'
+            }
         }
     });
     it('renders <span>', async ({ props }) => {
